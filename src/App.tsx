@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import RandomJoke from './jokes/Jokes'
+import Stories from './stories'
+
 const App: React.FC = () => {
   const [userQuery, setUserQuery] = useState('')
 
@@ -22,10 +25,14 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h1>Hello Avinash</h1>
+      <RandomJoke />
+      <hr/>
       <div className='form'>
         <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress}/>
         <button onClick={searchQuery}>Search</button>
       </div>
+      <hr/>
+      <Stories />
     </div>
   );
 }
