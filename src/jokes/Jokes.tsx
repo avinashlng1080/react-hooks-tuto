@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { IJoke } from '../Types'
+import { useFetch } from '../hooks/useFetch';
 
 const Joke: React.FC = () => {
-    const [ joke, setJoke ] = useState<IJoke>({ setup: '', punchline: ''})
+    // const [ joke, setJoke ] = useState<IJoke>({ setup: '', punchline: ''})
 
     // useEffect is called for each single re-render of your component
     // similar to componentDidMount and componentDidUpdate and lastly componentWillUnmount
-    useEffect( () => {
-        fetch('https://official-joke-api.appspot.com/random_joke')
-        .then(response => response.json())
-        .then( json =>{
-             console.log('joke json', json)
-             setJoke(json)
-        })
-    },
-    [] // an empty array makes this effect run only once - although it is setting state at line 12 - thus preventing a dead-lock
-    )
+    // useEffect( () => {
+    //     fetch('https://official-joke-api.appspot.com/random_joke')
+    //     .then(response => response.json())
+    //     .then( json =>{
+    //          console.log('joke json', json)
+    //          setJoke(json)
+    //     })
+    // },
+    // [] // an empty array makes this effect run only once - although it is setting state at line 12 - thus preventing a dead-lock
+    // )
 
-    const { setup, punchline } = joke 
+    const { setup, punchline } = useFetch('https://official-joke-api.appspot.com/random_joke', {}) 
 
     return (
         <div>
