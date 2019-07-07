@@ -16,3 +16,8 @@ export interface IStories {
     type: string,
     url: string
 }
+
+export interface ITaskList {
+    taskText: string,
+    id: string
+}
