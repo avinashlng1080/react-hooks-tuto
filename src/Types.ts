@@ -21,3 +21,8 @@ export interface ITaskList {
     taskText: string,
     id: string
 }
+
+export interface ITaskStore {
+    tasks: ITaskList[],
+    completedTasks: ITaskList[],
+}
