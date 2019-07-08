@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import './App.css';
 
 import RandomJoke from './jokes/Jokes'
 import Stories from './stories'
-import Tasks from './tasks';
+import Tasks from './tasks'
+import Gallery from './gallery'
 
 const App: React.FC = () => {
   const [userQuery, setUserQuery] = useState('')
@@ -32,6 +33,8 @@ const App: React.FC = () => {
         <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress}/>
         <button onClick={searchQuery}>Search</button>
       </div>
+      <hr/>
+      <Gallery />
       <hr/>
       <Tasks />
       <hr/>
