@@ -8,7 +8,6 @@ const TASKS_STORAGE_KEY = 'TASKS_STORAGE_KEY'
  * Store tasks in localStorage
  */
 const storeTasks = ({ tasks, completedTasks }: ITaskStore) => {
-    console.log('storeTasks called <<<')
     localStorage.setItem(TASKS_STORAGE_KEY, JSON.stringify({ tasks, completedTasks }))
 }
 
@@ -17,7 +16,6 @@ const storeTasks = ({ tasks, completedTasks }: ITaskStore) => {
  */
 const getStoredTasks = (): ITaskStore => {
     const value = localStorage.getItem(TASKS_STORAGE_KEY) || ''
-    console.log('value', value)
     return JSON.parse(value)
 }
 
