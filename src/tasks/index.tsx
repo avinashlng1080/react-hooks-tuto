@@ -15,8 +15,14 @@ const storeTasks = ({ tasks, completedTasks }: ITaskStore) => {
  * Get stored tasks
  */
 const getStoredTasks = (): ITaskStore => {
-    const value = localStorage.getItem(TASKS_STORAGE_KEY) || ''
-    return JSON.parse(value)
+    let storedTasks
+    try {
+        const value = localStorage.getItem(TASKS_STORAGE_KEY) || ''
+        storedTasks = JSON.parse(value)
+    } catch (error) {
+        console.log('error', error)
+    }
+    return { tasks: [], completedTasks: [] }
 }
 
 const Tasks: React.FC = () => {

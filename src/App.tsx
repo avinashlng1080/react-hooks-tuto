@@ -5,6 +5,7 @@ import RandomJoke from './jokes/Jokes'
 import Stories from './stories'
 import Tasks from './tasks'
 import Gallery from './gallery'
+import Matrix from './matrix'
 
 const App: React.FC = () => {
   const [userQuery, setUserQuery] = useState('')
@@ -37,6 +38,8 @@ const App: React.FC = () => {
         <input value={userQuery} onChange={updateUserQuery} onKeyPress={handleKeyPress} />
         <button onClick={searchQuery}>Search</button>
       </div>
+      <hr />
+      <Matrix />
       <hr />
       <div>
         {showGallery ? <Gallery /> : null}
