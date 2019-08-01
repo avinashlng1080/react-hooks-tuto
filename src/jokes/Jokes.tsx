@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { IJoke } from '../Types'
-import { useFetch } from '../hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 
 const Joke: React.FC = () => {
     // const [ joke, setJoke ] = useState<IJoke>({ setup: '', punchline: ''})
@@ -18,7 +18,7 @@ const Joke: React.FC = () => {
     // [] // an empty array makes this effect run only once - although it is setting state at line 12 - thus preventing a dead-lock
     // )
 
-    const { setup, punchline } = useFetch('https://official-joke-api.appspot.com/random_joke', {}) 
+    const { setup, punchline } = useFetch('https://official-joke-api.appspot.com/random_joke', {})
 
     return (
         <div>
@@ -27,6 +27,6 @@ const Joke: React.FC = () => {
             <p><em>{punchline}</em></p>
         </div>
     )
- }
+}
 
 export default Joke

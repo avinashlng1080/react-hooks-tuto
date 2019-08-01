@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import { IStories } from '../Types'
-import { useFetch } from '../hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 
 const Stories = () => {
     // const [stories, setStories] = useState<[IStories]>([{

@@ -26,3 +26,9 @@ export interface ITaskStore {
     tasks: ITaskList[],
     completedTasks: ITaskList[],
 }
+
+export interface IDynamicTransition {
+    increment: number,
+    delay: number,
+    length: number
+}
